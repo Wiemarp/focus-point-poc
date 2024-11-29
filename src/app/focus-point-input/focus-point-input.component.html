@@ -1,0 +1,21 @@
+<div style="position: relative;">
+  <img
+    [src]="imageSrc"
+    alt="Image"
+    #image
+    (click)="onImageClick($event, image)"
+    (mousedown)="onMouseDown($event, image)"
+    (mousemove)="onMouseMove($event, image)"
+    (mouseup)="onMouseUp($event)"
+    (mouseleave)="onMouseUp($event)"
+    (dragstart)="$event.preventDefault()"
+    style="max-width: 100%; height: auto; cursor: crosshair;"
+  />
+
+  <div
+    class="focus-circle"
+    [style.left.%]="coordinates.x"
+    [style.top.%]="coordinates.y"
+  ></div>
+</div>
+

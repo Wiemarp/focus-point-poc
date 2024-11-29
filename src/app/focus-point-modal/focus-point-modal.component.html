@@ -1,0 +1,22 @@
+<ng-template #content let-modal>
+  <form (ngSubmit)="onSubmitForm()">
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Change focus point</h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+      <app-focus-point-input [imageSrc]="imageData().src" name="image-data" [(ngModel)]="imageData().focusPoint"></app-focus-point-input>
+      <div class="row">
+        <p class="col-12 col-lg-6">X: {{ imageData().focusPoint.x }}%</p>
+        <p class="col-12 col-lg-6">Y: {{ imageData().focusPoint.y }}%</p>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="submit" class="btn btn-outline-secondary">Save</button>
+    </div>
+  </form>
+</ng-template>
+
+<button class="btn btn-lg btn-outline-primary mt-4" (click)="open(content)" style="width: 100%;">Select Focus Point
+</button>
+
