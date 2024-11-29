@@ -15,7 +15,7 @@ export class AppComponent {
   imageDataService: ImageDataService = Inject(ImageDataService);
 
   imageDataSignal = signal<ImageData>(
-    {src: "https://fastly.picsum.photos/id/678/2000/1000.jpg?hmac=KnYsrLVGqwhBuWiuJFPkQwp03sL-KTZMFVVrJR2lpIw", focusPoint: {x: 50, y: 50}})
+    {src: "../../678-2000x1000.jpg", focusPoint: {x: 50, y: 50}})
   readonly imageData = this.imageDataSignal();
   // readonly imageData: ImageData = this.imageDataService.imageData();
 }
